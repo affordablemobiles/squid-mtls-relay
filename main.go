@@ -17,6 +17,7 @@ import (
 )
 
 var bufferPool sync.Pool
+var proxyAddr string = mustGetenv("PROXY_ADDR")
 var dnsSuffix string = mustGetenv("CERTIFICATE_DNS_SUFFIX")
 
 func init() {
@@ -101,7 +102,7 @@ func proxyHandler(w http.ResponseWriter, r *http.Request) {
 	r.Header.Set("X-Real-IP", host)
 
 	// Pass the connection to squid...
-	targetConn, err := net.DialTimeout("tcp", "127.0.0.1:3128", time.Second*2)
+	targetConn, err := net.DialTimeout("tcp", proxyAddr, time.Second*2)
 	if err != nil {
 		log.Printf("failed to connect to upstream proxy: %s", err)
 		return

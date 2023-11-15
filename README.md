@@ -16,6 +16,8 @@ At runtime, make sure these files are mounted and accessible:
 * `cert.pem` (SSL/TLS Server Certificate)
 * `key.pem` (SSL/TLS Server Certificate Key)
 
+Configure the `PROXY_ADDR` environment variable as `host:port`, e.g. `127.0.0.1:3128` when running both the relay & squid within a pod on Kubernetes.
+
 Also, configure the `CERTIFICATE_DNS_SUFFIX` environment variable:
 
 User / Device identify is pulled from the certificate SAN DNSNames field, and the `CERTIFICATE_DNS_SUFFIX` is removed from the value, i.e.:
