@@ -36,7 +36,7 @@ This has mainly been tested against Chrome on Chrome OS.
 
 You'll need to use a auto-configuration script to specify a `HTTPS` proxy, see our example in [examples/proxy.pac](examples/proxy.pac).
 
-It is helpful to configure the [AutoSelectCertificateForUrls](https://chromeenterprise.google/policies/?policy=AutoSelectCertificateForUrls) policy.
+It is helpful to configure the [AutoSelectCertificateForUrls](https://chromeenterprise.google/policies/?policy=AutoSelectCertificateForUrls) policy so that users aren't prompted to select the client certificate to use when connecting to the proxy, as you can hint which one should be selected automatically.
 
 If you'd like to apply the proxy configuration per device, rather than per user, it is useful to use a Chrome Extension deployed via Enterprise policy: our [example](examples/chrome-extension) checks the prefix of the hostname configured with the [DeviceHostnameTemplate](https://chromeenterprise.google/intl/en_uk/policies/#DeviceHostnameTemplate) policy.
 
