@@ -1,0 +1,13 @@
+{
+    "name": "Example Proxy Policy",
+    "version": "0.1",
+    "manifest_version": 3,
+    "permissions": [
+        "proxy",
+        "enterprise.deviceAttributes"
+    ],
+    "background": {
+        "service_worker": "proxy.js",
+        "type": "module"
+    }
+}
