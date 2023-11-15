@@ -34,7 +34,7 @@ See the [examples/docker-squid](examples/docker-squid) folder for an example of 
 
 This has mainly been tested against Chrome on Chrome OS.
 
-You'll need to use a auto configuration script to specify a `HTTPS` proxy, see our example in [examples/proxy.pac](examples/proxy.pac).
+You'll need to use a auto-configuration script to specify a `HTTPS` proxy, see our example in [examples/proxy.pac](examples/proxy.pac).
 
 It is helpful to configure the [AutoSelectCertificateForUrls](https://chromeenterprise.google/policies/?policy=AutoSelectCertificateForUrls) policy.
 
@@ -46,7 +46,7 @@ There is no reason this relay won't work with a forward proxy other than Squid, 
 
 You would need to:
 
-* Accept the HTTP Basic authentication
+* Accept HTTP Basic authentication with:
    * Certificate Identity (described above with CERTIFICATE_DNS_SUFFIX) as the username
-   * `automatic` as the password
+   * `automatic` is always set as the password
 * Take the user IP from the X-Real-IP header for your logs.
